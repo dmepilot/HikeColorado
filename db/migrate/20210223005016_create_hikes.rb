@@ -4,6 +4,8 @@ class CreateHikes < ActiveRecord::Migration[6.0]
       t.datetime :date
       t.integer :rating
       t.string :comments
+      t.integer :user_id
+      t.integer :trail_id
 
       t.timestamps
     end
