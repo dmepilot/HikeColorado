@@ -1,0 +1,9 @@
+<h1>User's Show Page</h1>
+<%=@user.name%>
+test
+<ul>
+<%@user.hikes.all do |h|%>
+<li><%= h.trail.name%></li>
+<%end%>
+</ul>
+
