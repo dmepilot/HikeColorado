@@ -11,7 +11,7 @@ DATA = {
       ["name", "username", "password", "admin"],
     :users => [
       ["Testy McTesterton", "testy", "pw", true],
-      ["Demo McDemoface", "demo", "pw"],
+      ["Demo McDemoface", "demo", "pw", false],
       ["Fake Namedude", "fakey", "pw", false]
     ],
     :trail_keys =>
@@ -23,7 +23,7 @@ DATA = {
       ["Quandary Peak", "6.4 mile out and back", "moderate/difficult", "yes, on leash", "summit a 14,000' peak"],
       ["Four Pass Loop", "27.1 mile loop", "difficult", "yes, on leash", "plan on 3 to 4 days"]
     ],
-    :hikes_keys =>
+    :hike_keys =>
      ["date", "rating", "comments", "user_id", "trail_id"],
     :hikes => [
         [DateTime.new(2020, 8, 15), "4", "test comments", 1, 3],
