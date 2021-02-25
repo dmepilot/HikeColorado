@@ -1,0 +1,9 @@
+<h1>Colorado Trails</h1>
+<ul>
+<%@trails.each do |t|%>
+<li><%=link_to t.name, trail_path(t)%></li>
+<%end%>
+
+</ul>
+  
+

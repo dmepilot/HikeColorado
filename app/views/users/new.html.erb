@@ -1,0 +1,15 @@
+<h1>Sign Up!</h1>
+
+<%=form_for(@user, url:'/signup') do |f|%><br>
+<%=f.label :name%>
+<%=f.text_field :name %><br>
+<%=f.label :username%>
+<%=f.text_field :username%><br>
+<%=f.label :password%>
+<%=f.password_field :password%><br>
+<%= f.label :user_admin%>
+<%= f.check_box :admin %>
+  <br>
+
+<%=f.submit "Create User"%>
+<%end%>
