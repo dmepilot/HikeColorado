@@ -10,6 +10,22 @@
   </head>
 
   <body>
-    <%= yield %>
+     <body>
+ 
+          <ul class="navbar">
+            <li class="navbar"><%=link_to "HOME", {controller: "static", action: "welcome"}, class: "navbar"%></li>
+            <%if !logged_in?%>
+            <li class="navbar"><%=link_to "Login", login_path, class:"navbar"%></li>
+            <li class="navbar"><%=link_to "Sign Up", signup_path, class: "navbar"%></li>
+            <%else%> 
+            <li class="navbar"><%=link_to "Log Out", logout_path, method: "delete", class: "navbar" %></li>
+            <%end%>
+          </ul>
+        
+
+    <!-- content -->
+    <div class="container"  role="main">
+      <%= yield %>
+    </div>
   </body>
 </html>
