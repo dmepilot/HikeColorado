@@ -4,7 +4,7 @@ Welcome <%=@user.name%>!<br>
 Your Hikes:
 <ul>
 <%@user.hikes.all.each do |h|%>
-<li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.trail.name, trail_path(h.trail)%></li>
+<li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.trail.name, user_hike_path(current_user.id, h.id)%></li>
 <%end%>
 </ul>
 

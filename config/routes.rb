@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   resources :hikes
-  resources :trails
-  resources :users
+  resources :trails do 
+    resources :hikes
+  end
+  resources :users do
+    resources :hikes
+  end
+
+
   get '/', to: 'static#welcome'
   get 'about', to: 'static#about'
 

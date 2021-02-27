@@ -40,3 +40,7 @@
  li a:hover {
     background-color: #111;
   }
+
+  li.logout {
+    float: right;
+  }

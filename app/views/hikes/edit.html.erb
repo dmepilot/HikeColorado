@@ -1,0 +1,16 @@
+<h1>Edit Your Hike</h1>
+
+<%=form_for(@hike) do |f|%><br>
+<%=f.label :date%>
+<%=f.date_select(:date) %><br>
+<%=f.label :rating%>
+<%=f.text_field :rating%><br>
+<%=f.label :comments%>
+<%=f.text_field :comments%><br>
+<%=f.label :trail%>
+<%=f.collection_select(:trail_id, Trail.all, :id, :name)%>
+<%=f.hidden_field :user_id, value: current_user.id %>
+  <br>
+
+<%=f.submit "Edit Hike"%>
+<%end%>

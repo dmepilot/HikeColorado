@@ -4,3 +4,10 @@
 Length: <%=@trail.length%><br>
 Difficulty: <%=@trail.difficulty%><br>
 Notes: <%=@trail.notes%><br>
+<br>
+Trail Reviews:
+<ul>
+<%@trail.hikes.each do |h|%>
+<li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.comments, trail_hike_path(@trail.id, h.id)%> - Hiker: <%=h.user.name%></li>
+<%end%>
+</ul>
