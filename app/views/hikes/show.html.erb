@@ -1,0 +1,9 @@
+<h1>Hike Show Page</h1>
+
+<ul>
+<li><%=@hike.trail.name%></li>
+<li>Hiker: <%=@hike.user.name%></li>
+<li>Date: <%=@hike.date.strftime("%B %d, %Y")%></li>
+<li>Rating: <%=@hike.rating%></li>
+<li>Comments: <%=@hike.comments%></li>
+</ul>

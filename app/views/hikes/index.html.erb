@@ -1,0 +1,6 @@
+<h1>All Hikes</h1>
+<ul>
+<%Hike.all.each do |h|%>
+<li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.trail.name, hike_path(h)%></li>
+<%end%>
+</ul>
