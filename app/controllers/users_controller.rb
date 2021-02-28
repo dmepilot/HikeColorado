@@ -20,7 +20,8 @@ class UsersController < ApplicationController
     
     
     def show
-        # byebug
+        #  byebug
+        redirect_if_not_logged_in
         @user = User.find_by(id: params[:id])  
     end
 

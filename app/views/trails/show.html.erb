@@ -4,6 +4,7 @@
 Length: <%=@trail.length%><br>
 Difficulty: <%=@trail.difficulty%><br>
 Notes: <%=@trail.notes%><br>
+Dogs allowed?: <%=@trail.dogs%><br>
 <br>
 Trail Reviews:
 <ul>
@@ -11,3 +12,7 @@ Trail Reviews:
 <li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.comments, trail_hike_path(@trail.id, h.id)%> - Hiker: <%=h.user.name%></li>
 <%end%>
 </ul>
+
+<%if current_user.admin?%>
+<%=link_to "Edit This Trail", edit_trail_path(@trail)%>
+<%end%>

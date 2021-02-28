@@ -10,7 +10,7 @@ class HikesController < ApplicationController
         # byebug
         @hike = Hike.create(hike_params)
         if @hike.save
-            redirect_to hike_path(@hike)
+            redirect_to user_hike_path(current_user, @hike)
         else
             redirect_to new_hike_path
         end
