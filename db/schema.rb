@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_23_005016) do
+ActiveRecord::Schema.define(version: 2021_03_03_203112) do
 
   create_table "hikes", force: :cascade do |t|
     t.datetime "date"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_005016) do
     t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
   end
 
 end

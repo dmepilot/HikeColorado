@@ -8,11 +8,11 @@
 
 DATA = {
     :user_keys =>
-      ["name", "username", "password", "admin"],
+      ["name", "username", "password", "admin", "email"],
     :users => [
-      ["Testy McTesterton", "testy", "pw", true],
-      ["Demo McDemoface", "demo", "pw", false],
-      ["Fake Namedude", "fakey", "pw", false]
+      ["Testy McTesterton", "testy", "pw", true, "testy@test.com"],
+      ["Demo McDemoface", "demo", "pw", false, "demo@test.com"],
+      ["Fake Namedude", "fakey", "pw", false, "fakey@test.com"]
     ],
     :trail_keys =>
      ["name", "length", "difficulty", "dogs", "notes"],

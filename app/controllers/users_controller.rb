@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :redirect_if_not_logged_in, :except=>[:new,:create]
+     before_action :redirect_if_not_logged_in, :except=>[:new,:create]
 
 
     def new
@@ -38,6 +38,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :username, :password, :admin)
+        params.require(:user).permit(:name, :username, :password, :admin, :email)
     end
 end
