@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
   # get '/auth/:provider/callback' => 'sessions#create'
-  get '/auth/github/callback' => 'sessions#create'
+  get '/auth/:provider/callback' => 'sessions#create'
 
   root to: 'static#welcome'
 

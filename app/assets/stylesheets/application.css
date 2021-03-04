@@ -44,3 +44,7 @@
   li.logout {
     float: right;
   }
+
+  #error_explanation {
+    color: red;
+  }

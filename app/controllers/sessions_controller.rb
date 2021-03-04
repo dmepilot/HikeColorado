@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
     def create
-        if auth 
-          user =User.find_or_create_by(username: auth['info']['nickname']) do |u|
+        if auth
+          user =User.find_or_create_by(email: auth['info']['email']) do |u|
             u.email = auth['info']['email']
             u.password = SecureRandom.hex(12)
           end
