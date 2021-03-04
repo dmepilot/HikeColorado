@@ -26,10 +26,24 @@ DATA = {
     :hike_keys =>
      ["date", "rating", "comments", "user_id", "trail_id"],
     :hikes => [
-        [DateTime.new(2020, 8, 15), "4", "test comments", 1, 3],
-        [DateTime.new(2021, 1, 21), "3", "too cold", 2, 1],
-        [DateTime.new(2020, 6, 8), "5", "great views!", 3, 5],
-        [DateTime.new(2020, 9, 28), "5", "great fall colors!", 1, 2],
+        [DateTime.new(2020, 8, 15), 4, "test comments", 1, 3],
+        [DateTime.new(2021, 1, 21), 3, "too cold", 2, 1],
+        [DateTime.new(2020, 6, 8), 5, "great views!", 3, 5],
+        [DateTime.new(2020, 9, 28), 5, "great fall colors!", 1, 2],
+        [DateTime.new(2018, 7, 18), 4, "test comments", 1, 3],
+        [DateTime.new(2018, 6, 13), 3, "test comments", 2, 4],
+        [DateTime.new(2018, 8, 21), 5, "test comments", 3, 5],
+        [DateTime.new(2018, 7, 4), 5, "test comments", 1, 1],
+        [DateTime.new(2019, 6, 1), 5, "test comments", 2, 2],
+        [DateTime.new(2019, 7, 19), 4, "test comments", 3, 3],
+        [DateTime.new(2019, 9, 21), 4, "test comments", 1, 4],
+        [DateTime.new(2019, 8, 22), 3, "test comments", 2, 5],
+        [DateTime.new(2020, 5, 1), 2, "test comments", 3, 1],
+        [DateTime.new(2020, 6, 9), 5, "test comments", 1, 2],
+        [DateTime.new(2020, 7, 30), 4, "test comments", 2, 3],
+        [DateTime.new(2020, 8, 2), 3, "test comments", 3, 4],
+        [DateTime.new(2020, 5, 15), 4, "test comments", 1, 5],
+
     ]
   }
   

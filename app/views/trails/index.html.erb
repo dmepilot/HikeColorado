@@ -5,6 +5,12 @@
 <%end%>
 </ul>
 
+<h2>Highest Rated Trails:</h2>
 
+<ul>
+<%Trail.highest_rated_trail.each do |t|%> 
+<li><%=link_to t.name, trail_path(t)%> - Rating: <%=t.total_rating%></li>
+<%end%>
+</ul>
   
 

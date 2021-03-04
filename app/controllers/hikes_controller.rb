@@ -19,11 +19,11 @@ class HikesController < ApplicationController
     def index
         # byebug
         if params[:user_id]
-            @hikes = User.find_by_id(params[:user_id]).hikes
+            @hikes = User.find_by_id(params[:user_id]).hikes.order(date: :desc)
         elsif params[:trail_id]
-            @hikes = Trail.find_by_id(params[:trail_id]).hikes  
+            @hikes = Trail.find_by_id(params[:trail_id]).hikes.order(date: :desc)  
         else
-            @posts = Post.all
+            @hikes = Hike.order(date: :desc)
         end
     end
 
