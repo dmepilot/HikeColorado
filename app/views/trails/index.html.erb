@@ -12,5 +12,19 @@
 <li><%=link_to t.name, trail_path(t)%> - Rating: <%=t.total_rating%></li>
 <%end%>
 </ul>
+<h2>Most Popular Trails:</h2>
+<ul>
+<%@most_hiked.each do |t|%>
+<li><%=link_to t.name, trail_path(t)%> - Number of hikes: <%=t.hikes.count%></li>
+<%end%>
+</ul>
+<h2>Most Active Hikers:</h2>
+<ul>
+<%@most_user_hikes.each do |u|%>
+<li><%=link_to u.name, user_path(u)%> - Number of hikes: <%=u.hikes.count%></li>
+<%end%>
+</ul>
+
+
   
 

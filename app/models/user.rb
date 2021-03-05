@@ -7,6 +7,10 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
 
     # accepts_nested_attributes_for :hikes 
+    scope :user_with_most_hikes, -> {joins(:hikes).group('users.id').order('count(users.id) desc')}
+
+
+
 
 
 

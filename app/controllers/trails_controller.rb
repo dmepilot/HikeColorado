@@ -5,6 +5,8 @@ class TrailsController < ApplicationController
 
     def index
         @trails = Trail.all
+        @most_hiked = Trail.most_hiked_trail
+        @most_user_hikes = User.user_with_most_hikes
     end
 
     def show

@@ -3,8 +3,7 @@ class Trail < ApplicationRecord
     has_many :users, through: :hikes
     # accepts_nested_attributes_for :hikes
 
-    # scope :highest_rated_trail, -> {where(total_rating: self.maximum(:total_rating))}
-    # scope :most_hiked_trail, -> {where(: self.maximum(:cost))}
+     scope :most_hiked_trail, -> {joins(:hikes).group('trails.id').order('count(trails.id) desc')}
 
 
     def total_rating
