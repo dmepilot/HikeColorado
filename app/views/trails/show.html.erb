@@ -1,6 +1,5 @@
-<h1>Trail Show Page</h1>
+<h1><%=@trail.name%></h1>
 
-<%=@trail.name%><br>
 Length: <%=@trail.length%><br>
 Difficulty: <%=@trail.difficulty%><br>
 Notes: <%=@trail.notes%><br>
@@ -15,5 +14,5 @@ Trail Reviews:
 </ul>
 
 <%if current_user.admin?%>
-<%=link_to "Edit This Trail", edit_trail_path(@trail)%>
+<%=link_to "Admin: Edit This Trail", edit_trail_path(@trail)%>
 <%end%>

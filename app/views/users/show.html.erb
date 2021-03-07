@@ -7,4 +7,5 @@ Your Hikes:
 <li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.trail.name, user_hike_path(current_user.id, h.id)%></li>
 <%end%>
 </ul>
-
+<br>
+<%=link_to "Edit Your Profile", edit_user_path(current_user)%>

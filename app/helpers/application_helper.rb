@@ -13,6 +13,10 @@ module ApplicationHelper
         redirect_to '/' if !logged_in?
     end
 
+    def redirect_if_not_authorized
+        redirect_to user_path(current_user) if params[:id].to_i != current_user.id
+   end
+
     def admin?
         current_user.admin
     end

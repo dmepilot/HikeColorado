@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
      before_action :redirect_if_not_logged_in, :except=>[:new,:create]
+     before_action :redirect_if_not_authorized, :only=>[:show, :edit]
 
 
     def new
@@ -22,7 +23,8 @@ class UsersController < ApplicationController
     
     def show
         #  byebug
-        redirect_if_not_logged_in
+        # redirect_if_not_logged_in
+        # redirect_if_not_authorized
         @user = User.find_by(id: params[:id])  
     end
 
