@@ -1,3 +1,16 @@
+<% if @hike.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@hike.errors.count, "error") %> prohibited this user from being created:</h2>
+
+    <ul>
+      <% @hike.errors.full_messages.each do |m| %>
+        <li><%= m %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <h1>Submit a New Hike!</h1>
 
 <%=form_for(@hike) do |f|%><br>

@@ -1,6 +1,5 @@
 class HikesController < ApplicationController
-     before_action :redirect_if_not_logged_in
-
+     before_action :redirect_if_not_logged_in 
 
     def new
         @hike = Hike.new
@@ -12,7 +11,7 @@ class HikesController < ApplicationController
         if @hike.save
             redirect_to user_hike_path(current_user, @hike)
         else
-            redirect_to new_hike_path
+            render :new
         end
     end
 
@@ -34,10 +33,14 @@ class HikesController < ApplicationController
     end
 
     def edit
-        
+        @hike = Hike.find_by(id: params[:id])
+        redirect_to user_path(current_user) if @hike.user.id != current_user.id
     end
 
     def update
+        hike = Hike.find_by(id: params[:id])
+        hike.update(hike_params)
+        redirect_to hike_path(hike)
     end
 
     private
