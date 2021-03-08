@@ -7,6 +7,7 @@ Dogs allowed?: <%=@trail.dogs%><br>
 Trail Rating: <%=@trail.total_rating%><br>
 <br>
 Trail Reviews:
+<%=link_to "See This Trail's Reviews", trail_hikes_path(@trail)%>
 <ul>
 <%@trail.hikes.each do |h|%>
 <li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.comments, trail_hike_path(@trail.id, h.id)%> - Hiker: <%=h.user.name%></li>

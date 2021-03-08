@@ -1,11 +1,7 @@
-<h1>User's Show Page</h1>
-Welcome <%=@user.name%>!<br>
+<h1>Welcome <%=@user.name%>!</h1>
+<br>
 
-Your Hikes:
-<ul>
-<%@user.hikes.all.each do |h|%>
-<li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.trail.name, user_hike_path(current_user.id, h.id)%></li>
-<%end%>
-</ul>
+<%=link_to "See Your Hikes", user_hikes_path(current_user)%>
+
 <br>
 <%=link_to "Edit Your Profile", edit_user_path(current_user)%>
