@@ -8,12 +8,9 @@ class UsersController < ApplicationController
     end
 
     def create
-        #  byebug
         @user= User.new(user_params)
-        #  byebug
         if @user.save
             session[:user_id] = @user.id
-            # byebug
             redirect_to user_path(@user)
         else
             render :new
@@ -22,9 +19,6 @@ class UsersController < ApplicationController
     
     
     def show
-        #  byebug
-        # redirect_if_not_logged_in
-        # redirect_if_not_authorized
         @user = User.find_by(id: params[:id])  
     end
 

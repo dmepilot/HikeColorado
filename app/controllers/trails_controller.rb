@@ -1,8 +1,6 @@
 class TrailsController < ApplicationController
      before_action :redirect_if_not_logged_in
 
-
-
     def index
         @trails = Trail.all
         @most_hiked = Trail.most_hiked_trail

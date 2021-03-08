@@ -6,7 +6,6 @@ class HikesController < ApplicationController
     end
 
     def create
-        # byebug
         @hike = Hike.create(hike_params)
         if @hike.save
             redirect_to user_hike_path(current_user, @hike)
@@ -16,7 +15,6 @@ class HikesController < ApplicationController
     end
 
     def index
-        # byebug
         if params[:user_id]
             @hikes = User.find_by_id(params[:user_id]).hikes.order(date: :desc)
         elsif params[:trail_id]
@@ -27,8 +25,6 @@ class HikesController < ApplicationController
     end
 
     def show
-        # byebug
-    
         @hike = Hike.find(params[:id])
     end
 
