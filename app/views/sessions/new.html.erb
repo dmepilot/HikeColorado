@@ -1,5 +1,14 @@
 <h1>Login</h1>
 
+<% if flash != nil%> 
+<% flash.each do |type, msg| %>
+  <div id="error_explanation">
+    <%= msg %>
+  </div>
+<% end %>
+<br>
+<%end%>
+
 <%= form_for :user do |f| %>
   <%= f.label :email %>
   <%= f.email_field :email %><br>

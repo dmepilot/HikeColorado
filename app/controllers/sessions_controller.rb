@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
               redirect_to "/users/#{user.id}"
             else
               flash[:message] = "Incorrect login info, please try again"
-              redirect_to "/login"
+              render :new
             end
         end
     end
