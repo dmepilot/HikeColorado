@@ -7,12 +7,17 @@ class Trail < ApplicationRecord
 
 
     def total_rating
-        @rating = 0
-        self.hikes.each do |h|
-          @rating = @rating + h.rating 
+        if self.hikes != []
+          @rating = 0
+          self.hikes.each do |h|
+            @rating = @rating + h.rating 
+          end
+          total_rating = @rating.to_f / self.hikes.all.count 
+          total_rating.round(2)
+        else
+            total_rating = 1
         end
-        total_rating = @rating.to_f / self.hikes.all.count 
-        total_rating.round(2)
+
     end
 
     def self.highest_rated_trail

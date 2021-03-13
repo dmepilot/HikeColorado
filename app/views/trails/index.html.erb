@@ -21,7 +21,7 @@
 <h2>Most Active Hikers:</h2>
 <ul>
 <%@most_user_hikes.each do |u|%>
-<li><%=link_to u.name, user_path(u)%> - Number of hikes: <%=u.hikes.count%></li>
+<li><%=link_to u.name, user_hikes_path(u)%> - Number of hikes: <%=u.hikes.count%></li>
 <%end%>
 </ul>
 
