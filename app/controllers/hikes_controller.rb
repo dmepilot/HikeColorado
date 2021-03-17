@@ -6,7 +6,7 @@ class HikesController < ApplicationController
     end
 
     def create
-        @hike = Hike.create(hike_params)
+        @hike = Hike.new(hike_params)
         if @hike.save
             redirect_to user_hike_path(current_user, @hike)
         else

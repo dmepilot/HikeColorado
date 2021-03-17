@@ -28,7 +28,7 @@
 
 
 <h2>Search for a Hike</h2>
-<%= form_tag(trails_path, method: "get") do %>
+<%= form_tag(url: '/search', method: "get") do %>
   <%= label_tag(:query, "Search for:") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>

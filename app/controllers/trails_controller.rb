@@ -5,7 +5,7 @@ class TrailsController < ApplicationController
 
     def index
         @trails = Trail.all
-        @trails = Trail.searched_trails(params[:query]) unless params[:query].blank?
+        # @trails = Trail.searched_trails(params[:query]) unless params[:query].blank?
         @most_hiked = Trail.most_hiked_trail
         @most_user_hikes = User.user_with_most_hikes
         @highest_rated = Trail.highest_rated_trail
