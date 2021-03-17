@@ -5,6 +5,8 @@ class Trail < ApplicationRecord
 
      scope :most_hiked_trail, -> {joins(:hikes).group('trails.id').order('count(trails.id) desc')}
 
+     scope :searched_trails, -> (search_term){where('name LIKE ?', "%#{search_term}%")}
+
 
     def total_rating
         if self.hikes != []

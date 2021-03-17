@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # get '/', to: 'static#welcome'
   get '/about', to: 'static#about'
 
+  get '/search', to: 'trails#trails_search'
+
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
  

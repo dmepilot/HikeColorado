@@ -1,4 +1,5 @@
 <h1>Colorado Trails</h1>
+
 <ul>
 <%@trails.each do |t|%>
 <li><%=link_to t.name, trail_path(t)%></li>
@@ -8,7 +9,7 @@
 <h2>Highest Rated Trails:</h2>
 
 <ul>
-<%Trail.highest_rated_trail.each do |t|%> 
+<%@highest_rated.each do |t|%> 
 <li><%=link_to t.name, trail_path(t)%> - Rating: <%=t.total_rating%></li>
 <%end%>
 </ul>
@@ -24,6 +25,17 @@
 <li><%=link_to u.name, user_hikes_path(u)%> - Number of hikes: <%=u.hikes.count%></li>
 <%end%>
 </ul>
+
+
+<h2>Search for a Hike</h2>
+<%= form_tag(trails_path, method: "get") do %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<br><br><br>
+
+
 
 
   

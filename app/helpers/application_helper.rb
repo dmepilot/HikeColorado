@@ -17,11 +17,6 @@ module ApplicationHelper
         redirect_to user_path(current_user) if params[:id].to_i != current_user.id
    end
 
-    def admin?
-        current_user.admin
-    end
 
-    def set_user
-        @user = User.find_by(id: params[:id])
-    end
+
 end
