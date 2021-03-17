@@ -27,16 +27,13 @@ class HikesController < ApplicationController
     end
 
     def show
-        # @hike = Hike.find(params[:id])
     end
 
     def edit
-        # @hike = Hike.find_by(id: params[:id])
         redirect_to user_path(current_user) if @hike.user.id != current_user.id
     end
 
     def update
-        # hike = Hike.find_by(id: params[:id])
         if @hike.update(hike_params)
           redirect_to hike_path(hike)
         else

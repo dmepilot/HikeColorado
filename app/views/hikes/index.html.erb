@@ -2,6 +2,6 @@
 
 <ul>
 <%@hikes.each do |h|%>
-<li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.comments, hike_path(h)%> - Hiker: <%=h.user.name%></li>
+<li><%=h.date.strftime("%B %d, %Y")%> - <%=link_to h.comments, hike_path(h)%> - Hiker: <%=h.user.name%> - <%=link_to "Edit Hike", edit_user_hike_path(current_user, h)%></li>
 <%end%>
 </ul>
