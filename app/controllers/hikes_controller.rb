@@ -1,5 +1,7 @@
 class HikesController < ApplicationController
      before_action :redirect_if_not_logged_in 
+     before_action :set_hike, :only=>[:show, :edit, :update]
+
 
     def new
         @hike = Hike.new
@@ -25,22 +27,29 @@ class HikesController < ApplicationController
     end
 
     def show
-        @hike = Hike.find(params[:id])
+        # @hike = Hike.find(params[:id])
     end
 
     def edit
-        @hike = Hike.find_by(id: params[:id])
+        # @hike = Hike.find_by(id: params[:id])
         redirect_to user_path(current_user) if @hike.user.id != current_user.id
     end
 
     def update
-        hike = Hike.find_by(id: params[:id])
-        hike.update(hike_params)
-        redirect_to hike_path(hike)
+        # hike = Hike.find_by(id: params[:id])
+        if @hike.update(hike_params)
+          redirect_to hike_path(hike)
+        else
+            render :edit
+        end
     end
 
     private
     def hike_params
         params.require(:hike).permit(:date, :rating, :comments, :trail_id, :user_id)
+    end
+
+    def set_hike
+        @hike = Hike.find(params[:id])    
     end
 end
