@@ -48,3 +48,7 @@
   #error_explanation {
     color: red;
   }
+
+  #no-results {
+    color: red;
+  }

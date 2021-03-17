@@ -1,11 +1,12 @@
-<%if @trails_searched != nil %>
+<%if @trails_searched && !@trails_searched.empty? %>
 <h2>Your Search Results:</h2>
 <ul>
 <%@trails_searched.each do |t| %>
 <li><%=link_to t.name, trail_path(t)%></li>
 <%end%>
 </ul>
-
+<%elsif @trails_searched && @trails_searched.empty?%>
+<h2 id="no-results">No Matching Trails Found</h2>
 <%end%>
 
 
@@ -37,9 +38,9 @@
 </ul>
 
 
-<h2>Search for a Hike</h2>
+<h2>Search for a Hike by Name</h2>
 <%= form_tag(trails_path, method: "get") do %>
-  <%= label_tag(:query, "Search for:") %>
+  <%= label_tag(:query, "Search:") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 <% end %>
