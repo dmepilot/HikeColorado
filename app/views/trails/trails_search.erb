@@ -1,9 +1,0 @@
-<h1>Search Results</h1>
-
-<ul>
-<%@trails.each do |t|%>
-<li><%=link_to t.name, trail_path(t)%></li>
-<%end%>
-</ul>
-<br>
-<%=link_to "Back to Trails Page", trails_path%>
